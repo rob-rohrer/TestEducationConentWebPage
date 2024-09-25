@@ -3,10 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Education Content</title>
+    <title>Patient Education Resources</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 36px;
+            color: #004287;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        h2, h3 {
+            color: #004287;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .tab {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            border-bottom: 2px solid #e2e2e2;
+            margin-bottom: 20px;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 18px;
+            color: #004287;
+        }
+        .tab button:hover {
+            background-color: #e2e2e2;
+        }
+        .tab button.active {
+            background-color: #004287;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #e2e2e2;
+            border-top: none;
+            background-color: white;
+            border-radius: 0 0 10px 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #004287;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #b7004c;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>Test education content page.</p>
+
+    <div class="container">
+        <h1>Patient Education Resources</h1>
+
+        <!-- Tab navigation -->
+        <div class="tab">
+            <button class="tablinks" onclick="openCategory(event, 'HealthAndSavings')">Health and Savings</button>
+            <button class="tablinks" onclick="openCategory(event, 'HeartHealth')">Heart Health</button>
+            <button class="tablinks" onclick="openCategory(event, 'Mindfulness')">Mindfulness</button>
+        </div>
+
+        <!-- Tab content for Health and Savings -->
+        <div id="HealthAndSavings" class="tabcontent">
+            <h2>Health and Savings</h2>
+            
+            <!-- GoodRX Section -->
+            <div class="section">
+                <h3>GoodRX</h3>
+                <a href="https://support.goodrx.com/hc/en-us" class="button">GoodRX Help Center</a>
+                <a href="https://www.youtube.com/watch?v=9qkXs768JKY" class="button">How to Use GoodRX (video)</a>
+            </div>
+
+            <!-- Apple Health Section -->
+            <div class="section">
+                <h3>Apple Health</h3>
+                <a href="https://support.apple.com/en-us/104997" class="button">Health App on iPhone and iPad</a>
+                <a href="https://www.youtube.com/watch?v=RKve2P1bAMc" class="button">iPhone Tips</a>
+            </div>
+
+            <!-- Android Health Section (Single button) -->
+            <div class="section">
+                <h3>Android Health</h3>
+                <a href="https://support.google.com/android/topic/12203284?hl=en&ref_topic=7313245&sjid=9874266977391800367-NC" class="button">Android Health Connect</a>
+            </div>
+        </div>
+
+        <!-- Tab content for Heart Health -->
+        <div id="HeartHealth" class="tabcontent">
+            <h2>Heart Health</h2>
+            
+            <!-- Kardia Section (Three buttons) -->
+            <div class="section">
+                <h3>Kardia</h3>
+                <a href="https://alivecor.zendesk.com/hc/en-us/articles/1500000111761-Setting-up-your-Kardia-account" class="button">Setting up your Kardia Account</a>
+                <a href="https://www.youtube.com/watch?v=eA9pv6TVr-c" class="button">How to Record and EKG with KardiaMobileCard</a>
+                <a href="https://www.youtube.com/watch?v=muCn3bXrr9Q" class="button">Checking Your Heart with KardiaMobile</a>
+            </div>
+
+            <!-- My Fitness Pal Section -->
+            <div class="section">
+                <h3>My Fitness Pal</h3>
+                <a href="https://support.myfitnesspal.com/hc/en-us/categories/360001951372-Using-the-App" class="button">MyFitnessPal - Using the App</a>
+                <a href="https://www.youtube.com/watch?v=I9cdBAcuhXU&list=PLuSu4aLbmgPXUMEieOoeeBCwlkfbYJMQZ&index=1" class="button">How to Log Food in MyFitnessPal</a>
+                <a href="https://www.youtube.com/watch?v=CCoXyH-FiDU&list=PLuSu4aLbmgPXUMEieOoeeBCwlkfbYJMQZ&index=4" class="button">Customize the MyFitnessPal Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Tab content for Mindfulness -->
+        <div id="Mindfulness" class="tabcontent">
+            <h2>Mindfulness</h2>
+
+            <!-- Calm Section -->
+            <div class="section">
+                <h3>Calm</h3>
+                <a href="https://support.calm.com/hc/en-us/categories/360000654214-Using-the-Calm-App" class="button">Using the Calm App</a>
+                <a href="https://www.youtube.com/watch?v=fTQ9CRl_XPM" class="button">Calm App (video)</a>
+            </div>
+
+            <!-- Headspace Section -->
+            <div class="section">
+                <h3>Headspace</h3>
+                <a href="https://help.headspace.com/hc/en-us/categories/19497864665243-Getting-Started" class="button">Headspace Getting Started</a>
+                <a href="https://www.youtube.com/channel/UC3JhfsgFPLSLNEROQCdj-GQ" class="button">Headspace (video)</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openCategory(evt, categoryName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab contents
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Remove "active" class from all buttons
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab and add "active" class to the clicked button
+            document.getElementById(categoryName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Open the first tab by default
+        document.getElementsByClassName("tablinks")[0].click();
+    </script>
+
 </body>
 </html>
